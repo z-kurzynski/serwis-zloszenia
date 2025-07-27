@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serwis Zgłoszeń - Połączenie z Outlook</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://alcdn.msauth.net/browser/2.38.1/js/msal-browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Serwis Zgłoszeń</h1>
+            <p>Połączenie z Microsoft Outlook</p>
+        </header>
+
+        <main>
+            <div id="login-section">
+                <h2>Połącz się z Outlook</h2>
+                <button id="login-btn" class="primary-btn">Zaloguj się do Outlook</button>
+                <div id="login-status" class="status-message"></div>
+            </div>
+
+            <div id="user-section" class="hidden">
+                <h2>Witaj, <span id="user-name"></span>!</h2>
+                <div class="user-info">
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    <p><strong>Status połączenia:</strong> <span class="status-connected">Połączono z Outlook</span></p>
+                </div>
+                
+                <div class="outlook-data">
+                    <h3>Najnowsze wiadomości email</h3>
+                    <div id="emails-list" class="data-container">
+                        <div class="loading">Ładowanie wiadomości...</div>
+                    </div>
+                    
+                    <h3>Nadchodzące spotkania</h3>
+                    <div id="calendar-events" class="data-container">
+                        <div class="loading">Ładowanie kalendarza...</div>
+                    </div>
+                </div>
+
+                <button id="logout-btn" class="secondary-btn">Wyloguj się</button>
+            </div>
+
+            <div id="error-section" class="hidden">
+                <h2>Błąd połączenia</h2>
+                <div id="error-message" class="error-message"></div>
+                <button id="retry-btn" class="primary-btn">Spróbuj ponownie</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Serwis Zgłoszeń - Integracja z Microsoft Outlook</p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
